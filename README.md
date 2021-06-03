@@ -1,24 +1,48 @@
-# vue-themer
+# Themer
 
-## Project setup
-```
-npm install
-```
+## Usage
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Create a css class for each theme you want to support. Use css vars to define your values:
 
-### Compiles and minifies for production
-```
-npm run build
-```
+```css
+.darkMode {
+    --backgroundColor: black;
+    --foregroundColor: white;
+}
 
-### Lints and fixes files
-```
-npm run lint
+.lightMode {
+    --backgroundColor: white;
+    --foregroundColor: black;
+}
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Create top-level css variables that reference these theme variables. Example using Stylus:
+
+```css
+.theme = {
+    colors: {
+        background: var(--backgroundColor);
+        foreground: var(--foregroundColor);
+    }
+}
+```
+
+Initialize and configure a new Themer instance in your main Vue app (App.vue), passing an array of the themes you wish to support, along with the theme to initially apply:
+
+```js
+const themer = new Themer(["lightMode", "darkMode"], "lightMode");
+```
+
+Get the current applied theme from your Themer:
+
+```js
+const currentTheme = themer.currentTheme();
+console.log(currentTheme); // lightMode
+```
+
+Switch the current theme (takes affect immediately):
+
+```js
+themer.setCurrentTheme("darkMode");
+console.log(themer.currentTheme()); // darkMode
+```
