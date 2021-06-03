@@ -1,0 +1,81 @@
+// Global Tokens
+
+:root {
+
+    // Colors
+
+    --colors-global-white: #FFFFFF;
+    --colors-global-grey300: #F7F7F7;
+    --colors-global-grey500: #F1F1F1;
+    --colors-global-grey700: #AEAEAE;
+    --colors-global-black: #151515;
+
+    --colors-global-orange400: #F2A72E;
+    --colors-global-orange500: #F49A11;
+    --colors-global-orange600: #EF8F0B;
+    --colors-global-orange700: #EA7F09;
+
+    --colors-global-blue400: #6D798F;
+    --colors-global-blue500: #48505E;
+    --colors-global-blue600: #3F464E;
+    --colors-global-blue700: #363C42;
+}
+
+// Themes
+
+// Light Mode
+
+.lightMode {
+
+    // Colors
+
+    --colors-contextual-default-background: var(--colors-global-grey300);
+    --colors-contextual-default-foreground: var(--colors-global-black);
+    --colors-contextual-brand-primary-background: var(--colors-global-orange500);
+    --colors-contextual-brand-primary-foreground: var(--colors-global-white);
+    --colors-contextual-brand-secondary-background: var(--colors-global-blue500);
+    --colors-contextual-brand-secondary-foreground: var(--colors-global-white);
+
+    --colors-component-app-background: var(--colors-contextual-default-background);
+    --colors-component-app-foreground: var(--colors-contextual-default-foreground);
+
+    --colors-component-buttonPrimary-background: var(--colors-contextual-brand-primary-background);
+    --colors-component-buttonPrimary-foreground: var(--colors-contextual-brand-primary-foreground);
+    
+}
+
+// Dark Mode
+
+.darkMode {
+
+    // Colors
+
+    --colors-contextual-default-background: var(--colors-global-black);
+    --colors-contextual-default-foreground: var(--colors-global-white);
+    --colors-contextual-brand-primary-background: var(--colors-global-orange500);
+    --colors-contextual-brand-primary-foreground: var(--colors-global-white);
+    --colors-contextual-brand-secondary-background: var(--colors-global-blue500);
+    --colors-contextual-brand-secondary-foreground: var(--colors-global-white);
+
+    --colors-component-app-background: var(--colors-contextual-default-background);
+    --colors-component-app-foreground: var(--colors-contextual-default-foreground);
+
+    --colors-component-buttonPrimary-background: var(--colors-contextual-brand-secondary-background);
+    --colors-component-buttonPrimary-foreground: var(--colors-contextual-brand-secondary-foreground);
+
+}
+
+// Magic Sauce
+
+theme = {
+  colors: {
+      app: {
+          bg: var(--colors-component-app-background),
+          fg: var(--colors-component-app-foreground)
+      },
+    button: {
+      bg: var(--colors-component-buttonPrimary-background),
+      fg: var(--colors-component-buttonPrimary-foreground)
+    }
+  }
+}
