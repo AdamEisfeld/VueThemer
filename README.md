@@ -16,7 +16,7 @@ Create a css class for each theme you want to support. Use css vars to define yo
 }
 ```
 
-Create top-level css variables that reference these theme variables. Example using Stylus:
+Create top-level css variables that reference these theme variables. Example using Stylus (saved as themes/theme.styl):
 
 ```css
 .theme = {
@@ -25,6 +25,22 @@ Create top-level css variables that reference these theme variables. Example usi
         foreground: var(--foregroundColor);
     }
 }
+```
+
+Optionally add an automatic import of your css via a vue.config.js file in the root of your project:
+
+```
+module.exports = {
+	css: {
+		loaderOptions: {
+		stylus: {
+			import: [
+			'~@/themes/theme.styl',
+			],
+		},
+		},
+	},
+};
 ```
 
 Initialize and configure a new Themer instance in your main Vue app (App.vue), passing an array of the themes you wish to support, along with the theme to initially apply:
