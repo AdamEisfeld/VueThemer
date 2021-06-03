@@ -45,7 +45,7 @@ module.exports = {
 
 Initialize and configure a new Themer instance in your main Vue app (App.vue), passing an array of the themes you wish to support, along with the theme to initially apply:
 
-```js
+```vue
 const themer = new Themer(["lightMode", "darkMode"], "lightMode");
 ```
 
@@ -61,4 +61,15 @@ Switch the current theme (takes affect immediately):
 ```js
 themer.setCurrentTheme("darkMode");
 console.log(themer.currentTheme()); // darkMode
+```
+
+Use the theme values in your components' style tags:
+
+```css
+<style lang="stylus" scoped>
+div {
+	background-color: theme.colors.background;
+	color: theme.colors.foreground;
+}
+</style>
 ```
